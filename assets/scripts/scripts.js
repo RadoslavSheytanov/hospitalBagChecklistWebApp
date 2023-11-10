@@ -146,7 +146,7 @@ function fetchItems() {
                 if (section) {
                     createNewItem(section, item.name, item.id, item.checked === 1);
                 } else {
-                    console.error('Section not found for category:', item.category);
+                    console.warn('Section not found for category:', item.category);
                 }
             });
         })
