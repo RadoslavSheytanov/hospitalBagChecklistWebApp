@@ -1,0 +1,64 @@
+# System files #
+################
+.DS_Store
+Thumbs.db
+
+# Node #
+########
+node_modules/
+npm-debug.log*
+yarn.lock
+package-lock.json
+
+# SQLite Database #
+###################
+database/*.db
+
+# PHP vendor directory #
+########################
+/vendor/
+
+# Compiled CSS #
+################
+*.css.map
+
+# Editor directories and files #
+################################
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# Environment files #
+#####################
+.env
+
+# OS generated files #
+######################
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# User-specific files #
+#######################
+*.sublime-workspace
+
+# Log files #
+#############
+*.log
+
+# Compiled binary addons #
+##########################
+build/Release
+
+# Backup & temp files #
+#######################
+*.bak
+*.tmp
+*.temp
+*.t?mp
+
+# Other files and folders to ignore #
+#####################################
+cache/
+tmp/
