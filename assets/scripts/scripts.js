@@ -90,4 +90,28 @@ function setupChecklist(sectionId, addButtonId) {
     setupChecklist('usefulTipsSection', 'addAnUsefulTip');
     setupChecklist('othersSection', 'addOthers');
   });
+
+
+  // AJAX Communication with the Back-end - Adding items, updating the UI ...
+
+  function addItemToDatabase(itemName, category) {
+    fetch('php/add_item.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `name=${encodeURIComponent(itemName)}&category=${encodeURIComponent(category)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.id) {
+        console.log('Item added with ID:', data.id);
+        // Add item to the UI list
+      } else {
+        console.error('Error adding item:', data.error);
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  }
+  
   
