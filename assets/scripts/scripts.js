@@ -42,7 +42,22 @@ function createNewItem(section, itemName, id, isChecked) {
     li.appendChild(div);
 
     section.appendChild(li);
+
+    // Immediately apply the green background if the item is checked
+    if (checkbox.checked) {
+        li.classList.add('bg-light-green');
+    }
+
+    // Ensure the checkbox 'change' event handler sets the background color
+    checkbox.addEventListener('change', function(event) {
+        this.closest('.list-group-item').classList.toggle('bg-light-green', this.checked);
+    });
+
+    // Set the initial state of the checkbox based on isChecked
+    checkbox.checked = isChecked;
 }
+
+
 
 // Define addItemToDatabase in the global scope
 function addItemToDatabase(itemName, category, section) {
